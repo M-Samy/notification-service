@@ -157,3 +157,5 @@ These instructions will make the project up and running on your local machine fo
 * Sending notification via emails and support multiple email platforms "Email Service".
 * Apply a simple web interface helps us into creating groups and sending notifications.
 * ADD more test cases.
+## Service endpoints postman collection sample
+* [Notification-Service](https://www.getpostman.com/collections/aadd03f498e2062eb6e0)
