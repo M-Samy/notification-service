@@ -1,0 +1,38 @@
+version: '3.2'
+
+services:
+  mongo:
+    image: mongo:4.4.2
+    restart: always
+    container_name: notification_mongo_storage
+    ports:
+      - 27018:27017
+
+  rabbitmq:
+    image: rabbitmq:3.7-management
+    container_name: rabbitmq
+    restart: always
+    env_file: .env
+
+  app:
+    build:
+      context: .
+      dockerfile: ./app/compose/Dockerfile
+    container_name: notification_service
+    env_file: ./app/.env
+    ports:
+      - 8000:80
+    depends_on:
+      - mongo
+      - rabbitmq
+
+  notification_consumer:
+    build:
+      context: .
+      dockerfile: ./consumer/compose/Dockerfile
+    container_name: notification_consumer
+    restart: always
+    env_file: ./consumer/.env
+    depends_on:
+      - mongo
+      - rabbitmq
