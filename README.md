@@ -56,6 +56,10 @@ These instructions will make the project up and running on your local machine fo
     * A [POST] api used to create notification for group or single user.
 ```
 ## Calling Endpoint
+#### Getting Fake "FCM" Token "Get fake device token and receive notification means that this act as a device"
+```
+    http://127.0.0.1:8000/get-fcm-token
+```
 #### Create Group Endpoint
 * API Endpoint
 ```
@@ -95,7 +99,7 @@ These instructions will make the project up and running on your local machine fo
 ```
     {
         "phone": "+20111111111",
-        "fcm_token": "FCM TOKEN GENERATED INTO WEB FOR TESTING CAUSE I DON'T HAVE OTHER DEVICES"
+        "fcm_token": "FCM TOKEN GENERATED 'http://127.0.0.1:8000/get-fcm-token' INTO WEB FOR TESTING CAUSE I DON'T HAVE OTHER DEVICES"
     }
 ```
 * Response sample
